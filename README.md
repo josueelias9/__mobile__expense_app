@@ -5,3 +5,9 @@
 
 
 sudo chmod 666 /var/run/docker.sock
+
+https://github.com/sequelize/express-example/tree/master/express-main-example/sequelize
+
+
+user: root
+pass: example
