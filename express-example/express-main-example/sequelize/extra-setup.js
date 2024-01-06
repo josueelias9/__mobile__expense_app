@@ -7,8 +7,8 @@ function applyExtraSetup(sequelize) {
 	client.hasMany(expense)
 	expense.belongsTo(client)
 
-	client.hasMany(expense)
-	expense.belongsTo(client)
+	expenseType.hasMany(expense)
+	expense.belongsTo(expenseType)
 
 }
 

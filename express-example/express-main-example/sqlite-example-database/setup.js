@@ -1,49 +1,47 @@
 const sequelize = require('../sequelize')
 const { pickRandom, randomDate } = require('./helpers/random')
+const {faker} = require('@faker-js/faker');
 
 async function reset() {
 	console.log('Will rewrite the SQLite example database, adding some dummy data.')
 
 	await sequelize.sync({ force: true })
 
-	await sequelize.models.user.bulkCreate([
-		{ username: 'jack-sparrow' },
-		{ username: 'white-beard' },
-		{ username: 'black-beard' },
-		{ username: 'brown-beard' }
+	// expenseType table
+	await sequelize.models.expenseType.bulkCreate([
+		{name:"food"},
+		{name:"entertainment"},
+		{name:"drink and cigarretes"},
+		{name:"studies"},
+		{name:"transportation"},
+		{name:"others"}
 	])
 
-	await sequelize.models.orchestra.bulkCreate([
-		{ name: 'Jalisco Philharmonic' },
-		{ name: 'Symphony No. 4' },
-		{ name: 'Symphony No. 8' }
-	])
+	// client table
+	let clientData = []
 
-	// Let's create random instruments for each orchestra
-	for (const orchestra of await sequelize.models.orchestra.findAll()) {
-		for (let i = 0; i < 10; i++) {
-			const type = pickRandom([
-				'violin',
-				'trombone',
-				'flute',
-				'harp',
-				'trumpet',
-				'piano',
-				'guitar',
-				'pipe organ'
-			])
+	for(let i=0;i<=10;i++){
+		clientData.push({
+			name: faker.person.fullName(),
+			address: faker.location.streetAddress(),
+			password: faker.internet.password(),		})
+	}
 
-			await orchestra.createInstrument({
-				type: type,
-				purchaseDate: randomDate()
+	await sequelize.models.client.bulkCreate(clientData)
+
+	// expense table
+	const expenseTypes = await sequelize.models.expenseType.findAll();
+
+	for(const client of await sequelize.models.client.findAll()){
+		for(let i=0;i<2;i++){
+			const expenseType = pickRandom(expenseTypes);
+			await client.createExpense({
+				amount: faker.finance.amount(),
+				date: faker.date.recent(),
+				shortDescription: faker.lorem.sentence(),
+				longDescription: faker.lorem.paragraph(),
+				expenseTypeId: expenseType.id, 
 			})
-
-			// The following would be equivalent in this case:
-			// await sequelize.models.instrument.create({
-			// 	type: type,
-			// 	purchaseDate: randomDate(),
-			// 	orchestraId: orchestra.id
-			// });
 		}
 	}
 
