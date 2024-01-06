@@ -6,6 +6,10 @@ function applyExtraSetup(sequelize) {
 
 	client.hasMany(expense)
 	expense.belongsTo(client)
+
+	client.hasMany(expense)
+	expense.belongsTo(client)
+
 }
 
 module.exports = { applyExtraSetup }
