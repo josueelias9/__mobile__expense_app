@@ -12,3 +12,5 @@ https://github.com/sequelize/express-example/tree/master/express-main-example/se
 servidor: db
 user: root
 pass: example
+
+pagina 85 del libro
