@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 import SettingsScreen from './src/components/SettingsScreen'
 import HomeScreen from './src/components/HomeScreen'
+import Detail from './src/components/Detail'
 
 const Tab = createMaterialTopTabNavigator()
 
@@ -17,6 +18,7 @@ export default function App() {
       >
         <Tab.Screen name='Home' component={HomeScreen} />
         <Tab.Screen name='Settings' component={SettingsScreen} />
+        <Tab.Screen name='Detail' component={Detail} />
       </Tab.Navigator>
     </NavigationContainer>
   )
