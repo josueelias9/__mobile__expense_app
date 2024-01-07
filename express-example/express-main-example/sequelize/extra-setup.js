@@ -9,7 +9,6 @@ function applyExtraSetup(sequelize) {
 
 	expenseType.hasMany(expense)
 	expense.belongsTo(expenseType)
-
 }
 
 module.exports = { applyExtraSetup }

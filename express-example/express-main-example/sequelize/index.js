@@ -22,7 +22,7 @@ const modelDefiners = [
 	require('./models/orchestra.model'),
 	require('./models/client.model'),
 	require('./models/expense.model'),
-	require('./models/expenseType.model'),
+	require('./models/expenseType.model')
 	// Add more models here...
 	// require('./models/item'),
 ]

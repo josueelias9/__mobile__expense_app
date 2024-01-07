@@ -1,6 +1,6 @@
 const sequelize = require('../sequelize')
 const { pickRandom, randomDate } = require('./helpers/random')
-const {faker} = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker')
 
 async function reset() {
 	console.log('Will rewrite the SQLite example database, adding some dummy data.')
@@ -9,38 +9,39 @@ async function reset() {
 
 	// expenseType table
 	await sequelize.models.expenseType.bulkCreate([
-		{name:"food"},
-		{name:"entertainment"},
-		{name:"drink and cigarretes"},
-		{name:"studies"},
-		{name:"transportation"},
-		{name:"others"}
+		{ name: 'food' },
+		{ name: 'entertainment' },
+		{ name: 'drink and cigarretes' },
+		{ name: 'studies' },
+		{ name: 'transportation' },
+		{ name: 'others' }
 	])
 
 	// client table
 	let clientData = []
 
-	for(let i=0;i<=10;i++){
+	for (let i = 0; i <= 10; i++) {
 		clientData.push({
 			name: faker.person.fullName(),
 			address: faker.location.streetAddress(),
-			password: faker.internet.password(),		})
+			password: faker.internet.password()
+		})
 	}
 
 	await sequelize.models.client.bulkCreate(clientData)
 
 	// expense table
-	const expenseTypes = await sequelize.models.expenseType.findAll();
+	const expenseTypes = await sequelize.models.expenseType.findAll()
 
-	for(const client of await sequelize.models.client.findAll()){
-		for(let i=0;i<2;i++){
-			const expenseType = pickRandom(expenseTypes);
+	for (const client of await sequelize.models.client.findAll()) {
+		for (let i = 0; i < 2; i++) {
+			const expenseType = pickRandom(expenseTypes)
 			await client.createExpense({
 				amount: faker.finance.amount(),
 				date: faker.date.recent(),
 				shortDescription: faker.lorem.sentence(),
 				longDescription: faker.lorem.paragraph(),
-				expenseTypeId: expenseType.id, 
+				expenseTypeId: expenseType.id
 			})
 		}
 	}

@@ -1,13 +1,14 @@
-const getMoviesFromApi = () => {
-    return fetch('https://reactnative.dev/movies.json')
-      .then(response => response.json())
-      .then(json => {
-        return json.movies;
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
+const getMovies = async () => {
+  try {
+    const response = await fetch('http://localhost:8080/api/expenses');
+    const json = await response.json();
+    console.log(json)
+    // setData(json.movies);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setLoading(false);
+  }
+};
 
-
-  export default getMoviesFromApi;
+export default getMovies;
