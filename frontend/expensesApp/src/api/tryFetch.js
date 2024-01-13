@@ -1,6 +1,5 @@
 // https://reactnative.dev/docs/network?language=javascript
 
-
 const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
   try {
     const response = await fetch('http://localhost:8080/api/expenses', {
@@ -11,7 +10,7 @@ const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
       },
       body: JSON.stringify({
         amount: amount,
-        shortDescription: shortDescription,
+        shortDescription: shortDescription
       })
     })
   } catch (error) {

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { Text, View } from 'react-native'
+import MyForm from '../components/MyForm'
 function HomeScreen() {
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
@@ -25,6 +26,7 @@ function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Home!</Text>
+      <MyForm />
     </View>
   )
 }

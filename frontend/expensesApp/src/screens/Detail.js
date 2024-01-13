@@ -9,10 +9,6 @@ const Detail = () => {
   const [data, setData] = useState([])
 
   const getExpenses = async () => {
-    await postExpensesFromApiAsync({
-      amount: 20,
-      shortDescription: 'frontend :D',
-    })
     try {
       setData(await getExpensesFromApiAsync())
     } catch (error) {
