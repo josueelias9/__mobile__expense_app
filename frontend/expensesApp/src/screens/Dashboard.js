@@ -1,7 +1,6 @@
 // Dashboard.js
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import BarComponent from './BarComponent'
 import MyBarChart from '../components/MyBarChart'
 import MyPieChart from '../components/MyPieChart'
 
