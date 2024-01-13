@@ -3,12 +3,16 @@
 
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Text, View, StyleSheet } from 'react-native'
-import { getExpensesFromApiAsync } from '../api/tryFetch'
+import { getExpensesFromApiAsync, postExpensesFromApiAsync } from '../api/tryFetch'
 const Detail = () => {
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
 
   const getExpenses = async () => {
+    await postExpensesFromApiAsync({
+      amount: 20,
+      shortDescription: 'frontend :D',
+    })
     try {
       setData(await getExpensesFromApiAsync())
     } catch (error) {

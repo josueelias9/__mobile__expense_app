@@ -1,7 +1,7 @@
 // https://reactnative.dev/docs/network?language=javascript
 
 
-const postExpensesFromApiAsync = async () => {
+const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
   try {
     const response = await fetch('http://localhost:8080/api/expenses', {
       method: 'POST',
@@ -10,12 +10,10 @@ const postExpensesFromApiAsync = async () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        firstParam: 'yourValue',
-        secondParam: 'yourOtherValue'
+        amount: amount,
+        shortDescription: shortDescription,
       })
     })
-    const json = await response.json()
-    return json
   } catch (error) {
     console.error(error)
   }
