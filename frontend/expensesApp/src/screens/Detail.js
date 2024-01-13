@@ -31,12 +31,14 @@ const Detail = () => {
         <ActivityIndicator />
       ) : (
         <FlatList
-          ListHeaderComponent={ <View style={styles.row}>
-          <Text style={styles.cell}>{Object.keys(data[0])[1]}</Text>
-          <Text style={styles.cell}>{Object.keys(data[0])[2]}</Text>
-          <Text style={styles.cell}>{Object.keys(data[0])[3]}</Text>
-          <Text style={styles.cell}>{Object.keys(data[0])[4]}</Text>
-        </View>}
+          ListHeaderComponent={
+            <View style={styles.row}>
+              <Text style={styles.cell}>{Object.keys(data[0])[1]}</Text>
+              <Text style={styles.cell}>{Object.keys(data[0])[2]}</Text>
+              <Text style={styles.cell}>{Object.keys(data[0])[3]}</Text>
+              <Text style={styles.cell}>{Object.keys(data[0])[4]}</Text>
+            </View>
+          }
           data={data}
           keyExtractor={({ id }) => id}
           renderItem={({ item }) => (
@@ -46,15 +48,12 @@ const Detail = () => {
               <Text style={styles.cell}>{item.shortDescription}</Text>
               <Text style={styles.cell}>{item.date}</Text>
             </View>
-
           )}
         />
       )}
     </View>
   )
 }
-
-export default Detail
 
 const styles = StyleSheet.create({
   row: {
@@ -71,4 +70,4 @@ const styles = StyleSheet.create({
   }
 })
 
-
+export default Detail

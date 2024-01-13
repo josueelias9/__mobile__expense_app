@@ -8,6 +8,10 @@
 ```bash
 sudo chmod 666 /var/run/docker.sock
 ```
+- start database and admin containers
+```bash
+docker compose up
+```
 - go to `http://localhost:8082/`
 - set credentials
 ```
@@ -15,14 +19,16 @@ servidor: db
 user: root
 pass: example
 ```
-- create "mydb" database
+- create `mydb` database
 - execute script
 ```bash
+cd ./__mobile__expense_app/express-example/express-main-example
 npm run setup-example-db
 ```
 ### configure backend
 - run backend
 ```bash
+cd ./__mobile__expense_app/express-example/express-main-example
 npm run start
 ```
 - try this endpoint for testing `localhost:8080/api/expenses`
