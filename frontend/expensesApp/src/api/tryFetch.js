@@ -1,14 +1,34 @@
-const getMovies = async () => {
+// https://reactnative.dev/docs/network?language=javascript
+
+
+const postExpensesFromApiAsync = async () => {
   try {
-    const response = await fetch('http://localhost:8080/api/expenses')
+    const response = await fetch('http://localhost:8080/api/expenses', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        firstParam: 'yourValue',
+        secondParam: 'yourOtherValue'
+      })
+    })
     const json = await response.json()
-    console.log(json)
-    // setData(json.movies);
+    return json
   } catch (error) {
     console.error(error)
-  } finally {
-    setLoading(false)
   }
 }
 
-export default getMovies
+const getExpensesFromApiAsync = async () => {
+  try {
+    const response = await fetch('http://localhost:8080/api/expenses')
+    const json = await response.json()
+    return json
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export { getExpensesFromApiAsync, postExpensesFromApiAsync }

@@ -3,17 +3,14 @@
 
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Text, View, StyleSheet } from 'react-native'
-
+import { getExpensesFromApiAsync } from '../api/tryFetch'
 const Detail = () => {
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
 
   const getExpenses = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/expenses')
-      const json = await response.json()
-      setData(json)
-      console.log(Object.keys(json[0]))
+      setData(await getExpensesFromApiAsync())
     } catch (error) {
       console.error(error)
     } finally {
