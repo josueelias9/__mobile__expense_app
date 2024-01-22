@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Text, View, StyleSheet } from 'react-native'
 import { getExpensesFromApiAsync, postExpensesFromApiAsync } from '../api/tryFetch'
+import { limitString } from '../utils/general'
 const Detail = () => {
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
@@ -42,7 +43,7 @@ const Detail = () => {
             <View style={styles.row}>
               <Text style={styles.cell}>{item.amount}</Text>
               <Text style={styles.cell}>{item.expenseTypeId}</Text>
-              <Text style={styles.cell}>{item.shortDescription}</Text>
+              <Text style={styles.cell}>{limitString(item.shortDescription,10)}</Text>
               <Text style={styles.cell}>{item.date}</Text>
             </View>
           )}
