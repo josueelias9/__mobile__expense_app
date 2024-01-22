@@ -13,7 +13,7 @@ sudo chmod 666 /var/run/docker.sock
 docker compose up
 ```
 - go to `http://localhost:8082/`
-- set credentials
+- set credentials (if it doensnt work, insert any other password, such as `mysql_native_password` and then try again with the proposed credentials).
 ```
 servidor: db
 user: root
@@ -31,10 +31,11 @@ npm run setup-example-db
 cd ./__mobile__expense_app/express-example/express-main-example
 npm run start
 ```
-- try this endpoint for testing `localhost:8080/api/expenses`
+- try this endpoint for testing (GET) `localhost:8080/api/expenses`
 ### configure frontend
 - run frontend
 ```bash
+cd ./frontend/expensesApp
 npx expo start
 ```
 - press `w` to activate web enviroment

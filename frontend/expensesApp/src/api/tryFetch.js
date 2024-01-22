@@ -1,4 +1,4 @@
-// https://reactnative.dev/docs/network?language=javascript
+// https://reactnative.dev/docs/network
 
 const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
   try {
