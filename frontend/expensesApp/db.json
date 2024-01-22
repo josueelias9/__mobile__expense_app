@@ -1,0 +1,246 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "amount": 854.96,
+      "shortDescription": "Adeptio contabesco caput tamen combibo asper.",
+      "longDescription": "Amissio consuasor victoria soleo turpis trado conor. Similique adsidue cotidie tricesimus thesaurus caveo comitatus statim. Tabula corrupti dignissimos solus ustilo curriculum caelestis cogito universe.",
+      "date": "2024-01-22T01:46:34.000Z",
+      "createdAt": "2024-01-22T16:17:38.000Z",
+      "updatedAt": "2024-01-22T16:17:38.000Z",
+      "clientId": 1,
+      "expenseTypeId": 5
+    },
+    {
+      "id": 2,
+      "amount": 898.37,
+      "shortDescription": "Conduco tristis solvo quo.",
+      "longDescription": "Aegrus aeger vitium vulnero assumenda arceo. Vomer et cognatus solutio vesica via excepturi suffragium tenax. Deludo admiratio auctor iure.",
+      "date": "2024-01-22T11:32:21.000Z",
+      "createdAt": "2024-01-22T16:17:38.000Z",
+      "updatedAt": "2024-01-22T16:17:38.000Z",
+      "clientId": 1,
+      "expenseTypeId": 4
+    },
+    {
+      "id": 3,
+      "amount": 392.5,
+      "shortDescription": "Clementia cornu vespillo.",
+      "longDescription": "Comprehendo summa a delinquo. Collum ter umquam vae excepturi sollers. Consequuntur autem nam solio ver celer delectatio.",
+      "date": "2024-01-21T23:44:38.000Z",
+      "createdAt": "2024-01-22T16:17:39.000Z",
+      "updatedAt": "2024-01-22T16:17:39.000Z",
+      "clientId": 2,
+      "expenseTypeId": 5
+    },
+    {
+      "id": 4,
+      "amount": 647.79,
+      "shortDescription": "Spes absconditus appello defessus vobis impedit volubilis tabula.",
+      "longDescription": "Quaerat sono vomer civitas bos vitiosus. Spoliatio ter volva patria utrimque. Architecto vos calamitas tergo vorago thalassinus adhaero adinventitias.",
+      "date": "2024-01-22T11:53:06.000Z",
+      "createdAt": "2024-01-22T16:17:39.000Z",
+      "updatedAt": "2024-01-22T16:17:39.000Z",
+      "clientId": 2,
+      "expenseTypeId": 4
+    },
+    {
+      "id": 5,
+      "amount": 12.85,
+      "shortDescription": "Super adicio vetus vicissitudo sufficio terror stultus vesper.",
+      "longDescription": "Vestrum sunt clam clibanus suasoria. Censura eligendi utroque pauper vetus cito torrens. Aequus tricesimus defessus suppellex necessitatibus super commodi alioqui.",
+      "date": "2024-01-22T09:54:35.000Z",
+      "createdAt": "2024-01-22T16:17:39.000Z",
+      "updatedAt": "2024-01-22T16:17:39.000Z",
+      "clientId": 3,
+      "expenseTypeId": 6
+    },
+    {
+      "id": 6,
+      "amount": 232.3,
+      "shortDescription": "Tantillus copiose est.",
+      "longDescription": "Tactus unus corona valetudo adduco celer barba nisi totidem deripio. Spargo somniculosus creptio aequitas culpa caput ante sui. Deorsum atqui velut arto calco.",
+      "date": "2024-01-22T15:21:28.000Z",
+      "createdAt": "2024-01-22T16:17:40.000Z",
+      "updatedAt": "2024-01-22T16:17:40.000Z",
+      "clientId": 3,
+      "expenseTypeId": 6
+    },
+    {
+      "id": 7,
+      "amount": 317.94,
+      "shortDescription": "Sufficio uredo cena pecco volup torqueo vulgaris stillicidium.",
+      "longDescription": "Vicissitudo spiritus excepturi. Ipsam minus ago currus. Paulatim celo delego cumque desparatus.",
+      "date": "2024-01-21T19:05:25.000Z",
+      "createdAt": "2024-01-22T16:17:40.000Z",
+      "updatedAt": "2024-01-22T16:17:40.000Z",
+      "clientId": 4,
+      "expenseTypeId": 5
+    },
+    {
+      "id": 8,
+      "amount": 614.25,
+      "shortDescription": "Necessitatibus calco campana.",
+      "longDescription": "Apud complectus antepono amet argentum virgo utroque. Argentum carpo degero repellendus taceo vito conculco viriliter comparo. Acerbitas tibi magni attollo terga cena ascisco ancilla repudiandae coniecto.",
+      "date": "2024-01-22T13:06:04.000Z",
+      "createdAt": "2024-01-22T16:17:40.000Z",
+      "updatedAt": "2024-01-22T16:17:40.000Z",
+      "clientId": 4,
+      "expenseTypeId": 1
+    },
+    {
+      "id": 9,
+      "amount": 25.46,
+      "shortDescription": "Ulterius balbus tracto delectus coerceo ullus ea tego.",
+      "longDescription": "Deputo substantia capto abundans accusamus sapiente canonicus atrox verto. Condico aggredior quia repellendus. Cupiditas amor celer colligo confugo valeo umerus conventus accusamus alius.",
+      "date": "2024-01-22T02:07:58.000Z",
+      "createdAt": "2024-01-22T16:17:40.000Z",
+      "updatedAt": "2024-01-22T16:17:40.000Z",
+      "clientId": 5,
+      "expenseTypeId": 1
+    },
+    {
+      "id": 10,
+      "amount": 581.89,
+      "shortDescription": "Causa admoveo depereo corpus conatus tristis verus una triduana.",
+      "longDescription": "Decerno conitor via cado aggredior corporis curis natus. Surgo cupiditas tantillus arbitro quas tracto cras voluptatibus conturbo. Carus eveniet nulla viscus arbor.",
+      "date": "2024-01-22T13:50:51.000Z",
+      "createdAt": "2024-01-22T16:17:41.000Z",
+      "updatedAt": "2024-01-22T16:17:41.000Z",
+      "clientId": 5,
+      "expenseTypeId": 5
+    },
+    {
+      "id": 11,
+      "amount": 571.28,
+      "shortDescription": "Delego nam derelinquo cum.",
+      "longDescription": "Vulariter tollo vicissitudo at adflicto aut. Accommodo comprehendo tondeo tristis cauda cultura pauci adfero consequuntur. Cupio tui demulceo.",
+      "date": "2024-01-22T10:08:59.000Z",
+      "createdAt": "2024-01-22T16:17:41.000Z",
+      "updatedAt": "2024-01-22T16:17:41.000Z",
+      "clientId": 6,
+      "expenseTypeId": 5
+    },
+    {
+      "id": 12,
+      "amount": 604.55,
+      "shortDescription": "Vereor consequuntur defaeco crastinus villa tribuo.",
+      "longDescription": "Illum ea adnuo cursim. Apto stabilis sordeo solio vito amiculum. Clarus suspendo suus utique approbo sursum.",
+      "date": "2024-01-22T13:38:31.000Z",
+      "createdAt": "2024-01-22T16:17:41.000Z",
+      "updatedAt": "2024-01-22T16:17:41.000Z",
+      "clientId": 6,
+      "expenseTypeId": 6
+    },
+    {
+      "id": 13,
+      "amount": 577.02,
+      "shortDescription": "Animadverto velit cunctatio alienus versus cohibeo deleo adhaero corporis ait.",
+      "longDescription": "Delibero arma ut peccatus torrens. Crapula videlicet calamitas cubicularis aperio bibo quisquam. Contego voluptas constans abundans apostolus umquam.",
+      "date": "2024-01-21T19:24:20.000Z",
+      "createdAt": "2024-01-22T16:17:42.000Z",
+      "updatedAt": "2024-01-22T16:17:42.000Z",
+      "clientId": 7,
+      "expenseTypeId": 4
+    },
+    {
+      "id": 14,
+      "amount": 917.26,
+      "shortDescription": "Peccatus illo sui callide calco.",
+      "longDescription": "Assentator claustrum subvenio coaegresco rem optio. Tutis templum accusator quisquam volup utrimque cupressus. Summopere comitatus utrum curatio teneo averto crudelis harum.",
+      "date": "2024-01-21T17:11:41.000Z",
+      "createdAt": "2024-01-22T16:17:42.000Z",
+      "updatedAt": "2024-01-22T16:17:42.000Z",
+      "clientId": 7,
+      "expenseTypeId": 2
+    },
+    {
+      "id": 15,
+      "amount": 37.95,
+      "shortDescription": "Tunc amor substantia.",
+      "longDescription": "Abundans decerno maiores auditor crustulum summa. Trucido spiculum demo vigor defungo dolorum. Bestia paens cunae sursum similique.",
+      "date": "2024-01-22T14:41:00.000Z",
+      "createdAt": "2024-01-22T16:17:42.000Z",
+      "updatedAt": "2024-01-22T16:17:42.000Z",
+      "clientId": 8,
+      "expenseTypeId": 4
+    },
+    {
+      "id": 16,
+      "amount": 773.71,
+      "shortDescription": "Ratione tracto concedo aequus animadverto pax.",
+      "longDescription": "Tardus aeger balbus quas. Utique tempus incidunt communis degero pel ducimus defero campana aestivus. Amaritudo via conatus verecundia tollo commodo tonsor conatus canto.",
+      "date": "2024-01-22T13:41:14.000Z",
+      "createdAt": "2024-01-22T16:17:43.000Z",
+      "updatedAt": "2024-01-22T16:17:43.000Z",
+      "clientId": 8,
+      "expenseTypeId": 1
+    },
+    {
+      "id": 17,
+      "amount": 54.5,
+      "shortDescription": "Enim calculus pecto volubilis arcesso cultura earum adipisci.",
+      "longDescription": "Acer teneo asporto laborum numquam decimus distinctio acsi cenaculum crinis. Vulgo vaco enim. Cuius taedium caterva copia caries convoco altus aestus utique aetas.",
+      "date": "2024-01-22T03:37:24.000Z",
+      "createdAt": "2024-01-22T16:17:43.000Z",
+      "updatedAt": "2024-01-22T16:17:43.000Z",
+      "clientId": 9,
+      "expenseTypeId": 2
+    },
+    {
+      "id": 18,
+      "amount": 215.77,
+      "shortDescription": "Inflammatio basium auxilium tui spiculum.",
+      "longDescription": "Vesper tutis volutabrum aedificium unde sponte commodo eaque. Aegre crapula quam custodia. Thymum commodi agnitio nam dignissimos utor vobis.",
+      "date": "2024-01-22T13:42:03.000Z",
+      "createdAt": "2024-01-22T16:17:43.000Z",
+      "updatedAt": "2024-01-22T16:17:43.000Z",
+      "clientId": 9,
+      "expenseTypeId": 6
+    },
+    {
+      "id": 19,
+      "amount": 149.66,
+      "shortDescription": "Sordeo valens corrupti concedo.",
+      "longDescription": "Canonicus acer cilicium sustineo vesper audio voluptatem depereo deleo. Venustas arca temeritas conitor terebro talus allatus accedo. Aro defero creta temeritas defleo chirographum votum advenio.",
+      "date": "2024-01-21T18:38:04.000Z",
+      "createdAt": "2024-01-22T16:17:44.000Z",
+      "updatedAt": "2024-01-22T16:17:44.000Z",
+      "clientId": 10,
+      "expenseTypeId": 3
+    },
+    {
+      "id": 20,
+      "amount": 186.19,
+      "shortDescription": "Summopere culpa subiungo ultio.",
+      "longDescription": "Unde adhaero supplanto damnatio ceno. Charisma triumphus triduana. Cetera adipiscor testimonium delectatio mollitia casso approbo thema ager viriliter.",
+      "date": "2024-01-21T16:37:22.000Z",
+      "createdAt": "2024-01-22T16:17:44.000Z",
+      "updatedAt": "2024-01-22T16:17:44.000Z",
+      "clientId": 10,
+      "expenseTypeId": 2
+    },
+    {
+      "id": 21,
+      "amount": 861.67,
+      "shortDescription": "Comptus tener arcesso cultellus cotidie cuius aequitas pariatur suspendo.",
+      "longDescription": "Peccatus consuasor suppono supplanto amoveo degusto aiunt. Cupiditate terga corporis vito. Demulceo atrox tardus.",
+      "date": "2024-01-21T18:06:25.000Z",
+      "createdAt": "2024-01-22T16:17:44.000Z",
+      "updatedAt": "2024-01-22T16:17:44.000Z",
+      "clientId": 11,
+      "expenseTypeId": 5
+    },
+    {
+      "id": 22,
+      "amount": 174,
+      "shortDescription": "Amplexus quos curvo cubo barba curso blanditiis.",
+      "longDescription": "Velut termes somniculosus thesaurus vigor asperiores decet bestia. Arto alienus voluptates decimus velum. Maiores vae omnis usitas apud curia absens.",
+      "date": "2024-01-22T06:53:51.000Z",
+      "createdAt": "2024-01-22T16:17:44.000Z",
+      "updatedAt": "2024-01-22T16:17:44.000Z",
+      "clientId": 11,
+      "expenseTypeId": 6
+    }
+  ]
+}

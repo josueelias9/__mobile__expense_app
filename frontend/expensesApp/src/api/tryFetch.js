@@ -1,8 +1,10 @@
 // https://reactnative.dev/docs/network
 
+let endpoint = 'http://localhost:3000/expenses'
+// let endpoint = "http://localhost:8080/api/expenses"
 const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
   try {
-    const response = await fetch('http://localhost:8080/api/expenses', {
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -20,7 +22,7 @@ const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
 
 const getExpensesFromApiAsync = async () => {
   try {
-    const response = await fetch('http://localhost:8080/api/expenses')
+    const response = await fetch(endpoint)
     const json = await response.json()
     return json
   } catch (error) {

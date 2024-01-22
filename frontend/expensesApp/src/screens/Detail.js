@@ -43,7 +43,7 @@ const Detail = () => {
             <View style={styles.row}>
               <Text style={styles.cell}>{item.amount}</Text>
               <Text style={styles.cell}>{item.expenseTypeId}</Text>
-              <Text style={styles.cell}>{limitString(item.shortDescription,10)}</Text>
+              <Text style={styles.cell}>{limitString(item.shortDescription, 10)}</Text>
               <Text style={styles.cell}>{item.date}</Text>
             </View>
           )}
