@@ -1,10 +1,21 @@
-const Example = () => {
+import React from 'react'
+import {
+  FormControl,
+  Input,
+  Stack,
+  WarningOutlineIcon,
+  Box,
+  Center,
+  NativeBaseProvider
+} from 'native-base'
+
+const Example = ({ label }) => {
   return (
     <Box alignItems='center'>
       <Box w='100%' maxWidth='300px'>
         <FormControl isRequired>
           <Stack mx='4'>
-            <FormControl.Label>Password</FormControl.Label>
+            <FormControl.Label>{label}</FormControl.Label>
             <Input type='password' defaultValue='12345' placeholder='password' />
             <FormControl.HelperText>Must be atleast 6 characters.</FormControl.HelperText>
             <FormControl.ErrorMessage leftIcon={<WarningOutlineIcon size='xs' />}>

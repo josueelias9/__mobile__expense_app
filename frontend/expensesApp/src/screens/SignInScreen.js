@@ -1,7 +1,7 @@
 import { Button, Text, TextInput, View } from 'react-native'
 import * as React from 'react'
 import { AuthContext } from '../../App'
-
+import BaseImage from '../baseComponents/BaseImage'
 function SignInScreen() {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
@@ -10,6 +10,7 @@ function SignInScreen() {
 
   return (
     <View>
+      <BaseImage />
       <TextInput placeholder='Username' value={username} onChangeText={setUsername} />
       <TextInput
         placeholder='Password'
