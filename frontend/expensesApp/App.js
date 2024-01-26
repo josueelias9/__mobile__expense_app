@@ -1,18 +1,12 @@
 import * as React from 'react'
-import { Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { NativeBaseProvider, Box } from 'native-base'
 import NavigationMainTopTab from './src/navigators/NavigationMainTopTab'
 import SignInScreen from './src/screens/SignInScreen'
-export const AuthContext = React.createContext()
+import SplashScreen from './src/screens/SplashScreen'
 
-function SplashScreen() {
-  return (
-    <View>
-      <Text>Loading...</Text>
-    </View>
-  )
-}
+export const AuthContext = React.createContext()
 
 const Stack = createNativeStackNavigator()
 
@@ -94,29 +88,31 @@ export default function App({ navigation }) {
 
   return (
     <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          {state.isLoading ? (
-            // We haven't finished checking for the token yet
-            <Stack.Screen name='Splash' component={SplashScreen} />
-          ) : state.userToken == null ? (
-            // No token found, user isn't signed in
-            <Stack.Screen
-              name='SignIn'
-              component={SignInScreen}
-              options={{
-                title: 'Sign in',
-                // When logging out, a pop animation feels intuitive
-                animationTypeForReplace: state.isSignout ? 'pop' : 'push'
-              }}
-            />
-          ) : (
-            // User is signed in
-            // <Stack.Screen name='Home' component={HomeScreen} />
-            <Stack.Screen name='NavigationMainTopTab' component={NavigationMainTopTab} />
-          )}
-        </Stack.Navigator>
-      </NavigationContainer>
+      <NativeBaseProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            {state.isLoading ? (
+              // We haven't finished checking for the token yet
+              <Stack.Screen name='Splash' component={SplashScreen} />
+            ) : state.userToken == null ? (
+              // No token found, user isn't signed in
+              <Stack.Screen
+                name='SignIn'
+                component={SignInScreen}
+                options={{
+                  title: 'Sign in',
+                  // When logging out, a pop animation feels intuitive
+                  animationTypeForReplace: state.isSignout ? 'pop' : 'push'
+                }}
+              />
+            ) : (
+              // User is signed in
+              // <Stack.Screen name='Home' component={HomeScreen} />
+              <Stack.Screen name='NavigationMainTopTab' component={NavigationMainTopTab} />
+            )}
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
     </AuthContext.Provider>
   )
 }
