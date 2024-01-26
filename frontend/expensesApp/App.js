@@ -2,6 +2,8 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NativeBaseProvider, Box } from 'native-base'
+import { camelCaseToWords } from './src/utils/general'
+
 import NavigationMainTopTab from './src/navigators/NavigationMainTopTab'
 import SignInScreen from './src/screens/SignInScreen'
 import SplashScreen from './src/screens/SplashScreen'
@@ -93,11 +95,11 @@ export default function App({ navigation }) {
           <Stack.Navigator>
             {state.isLoading ? (
               // We haven't finished checking for the token yet
-              <Stack.Screen name='Splash' component={SplashScreen} />
+              <Stack.Screen name={camelCaseToWords('Splash')} component={SplashScreen} />
             ) : state.userToken == null ? (
               // No token found, user isn't signed in
               <Stack.Screen
-                name='SignIn'
+                name={camelCaseToWords('SignIn')}
                 component={SignInScreen}
                 options={{
                   title: 'Sign in',
@@ -108,7 +110,10 @@ export default function App({ navigation }) {
             ) : (
               // User is signed in
               // <Stack.Screen name='Home' component={HomeScreen} />
-              <Stack.Screen name='NavigationMainTopTab' component={NavigationMainTopTab} />
+              <Stack.Screen
+                name={camelCaseToWords('NavigationMainTopTab')}
+                component={NavigationMainTopTab}
+              />
             )}
           </Stack.Navigator>
         </NavigationContainer>

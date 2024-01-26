@@ -6,4 +6,12 @@ function limitString(str, limit) {
   }
 }
 
-export { limitString }
+function camelCaseToWords(str) {
+  // Insert a space before all caps and trim the resulting string
+  return str
+    .replace(/([A-Z])/g, ' $1')
+    .trim()
+    .toLowerCase()
+}
+
+export { limitString, camelCaseToWords }
