@@ -40,3 +40,8 @@ npx expo start
 ```
 - press `w` to activate web enviroment
 - go to `http://localhost:19006`
+- if not running backend, mock the database with this command:
+```bash
+cd ./frontend/expensesApp
+npx json-server db.json 
+```
