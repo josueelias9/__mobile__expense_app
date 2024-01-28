@@ -36,11 +36,11 @@ npm run start
 - run frontend
 ```bash
 cd ./frontend/expensesApp
-npx expo start
+npm run web
 ```
 - press `w` to activate web enviroment
 - go to `http://localhost:19006`
-- if not running backend, mock the database with this command:
+- if not running backend, mock the it with this command:
 ```bash
 cd ./frontend/expensesApp
 npx json-server db.json 

@@ -14,4 +14,14 @@ function camelCaseToWords(str) {
     .toLowerCase()
 }
 
-export { limitString, camelCaseToWords }
+function filterObjectByKey(obj, keys) {
+  const filteredObj = {}
+  keys.forEach(key => {
+    if (obj.hasOwnProperty(key)) {
+      filteredObj[key] = obj[key]
+    }
+  })
+  return filteredObj
+}
+
+export { limitString, camelCaseToWords, filterObjectByKey }
