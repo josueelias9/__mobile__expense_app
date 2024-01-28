@@ -25,21 +25,18 @@ const App = () => {
 
   const selectedKeys = ['amount', 'shortDescription', 'longDescription']
 
-
   return (
     <View style={{ flex: 1, padding: 24 }}>
       {isLoading ? (
         <ActivityIndicator />
       ) : (
         <>
-          <BaseHStack items={selectedKeys.map((item)=>(camelCaseToWords(item)))}/>
+          <BaseHStack items={selectedKeys.map(item => camelCaseToWords(item))} />
           {data.map((expense, index) => {
             return (
               <BaseHStack
                 key={index}
-                items={Object.values(
-                  filterObjectByKey(expense, selectedKeys)
-                )}
+                items={Object.values(filterObjectByKey(expense, selectedKeys))}
                 maxLength={20}
               />
             )
