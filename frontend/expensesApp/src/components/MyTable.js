@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, View } from 'react-native'
 import { getExpensesFromApiAsync } from '../api/tryFetch'
-import BaseHStack from '../baseComponents/BaseHStack'
-import BaseVStack from '../baseComponents/BaseVStack'
 import { camelCaseToWords, filterObjectByKey } from '../utils/general'
+import BaseHStack from '../baseComponents/BaseHStack'
 
 const App = () => {
   const [isLoading, setLoading] = useState(true)

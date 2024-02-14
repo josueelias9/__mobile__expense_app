@@ -1,25 +1,36 @@
 // https://docs.nativebase.io/input#h3-controlled-input
 //@ts-nocheck
 import React from 'react'
-import { Button, Modal, Stack, FormControl, Input } from 'native-base'
+import { Button, Modal, Stack, FormControl, Input, Center, NativeBaseProvider } from 'native-base'
 import { useState } from 'react'
 import { postExpensesFromApiAsync } from '../api/tryFetch'
 
-const Example = ({ labelOne, labelTwo, buttonName }) => {
+const Example = () => {
   const [placement, setPlacement] = useState(undefined)
   const [open, setOpen] = useState(false)
-  const [value1, setValue1] = React.useState({
-    amount:"",
-    shortDescription:""
-  });
+  const [value, setValue] = React.useState({
+    amount: '',
+    shortDescription: '',
+    longDescription: ''
+  })
 
-  const handleChange = (text,key) => {
-    setValue1({
-      ...value1,
-      [key]: text,
+  const handleChangeText = text =>
+    setValue({
+      ...value,
+      amount: text
     })
-    // console.log(value1)
-  };
+
+  const handleChangeShortDescription = text =>
+    setValue({
+      ...value,
+      shortDescription: text
+    })
+
+  const handleChangeLongDescription = text =>
+    setValue({
+      ...value,
+      longDescription: text
+    })
 
   const openModal = placement => {
     setOpen(true)
@@ -35,7 +46,7 @@ const Example = ({ labelOne, labelTwo, buttonName }) => {
         }}
         space={2}
       >
-        <Button onPress={() => openModal('bottom')}>{buttonName}</Button>
+        <Button onPress={() => openModal('bottom')}>Bottom</Button>
       </Stack>
       <Modal isOpen={open} onClose={() => setOpen(false)} safeAreaTop={true}>
         <Modal.Content maxWidth='350' {...styles[placement]}>
@@ -43,12 +54,31 @@ const Example = ({ labelOne, labelTwo, buttonName }) => {
           <Modal.Header>Contact Us</Modal.Header>
           <Modal.Body>
             <FormControl>
-              <FormControl.Label>{labelOne}</FormControl.Label>
-              <Input value={value1.amount} w="100%" onChangeText={(text)=>handleChange(text,"amount")} placeholder="Value Controlled Input" />            
+              <FormControl.Label>amount</FormControl.Label>
+              <Input
+                value={value.amount}
+                w='100%'
+                onChangeText={handleChangeText}
+                placeholder='Value Controlled Input'
+              />{' '}
             </FormControl>
-            <FormControl mt='3'>
-              <FormControl.Label>{labelTwo}</FormControl.Label>
-              <Input value={value1.shortDescription} w="100%" onChangeText={(text)=>handleChange(text,"shortDescription")} placeholder="Value Controlled Input" />            
+            <FormControl>
+              <FormControl.Label>shortDescription</FormControl.Label>
+              <Input
+                value={value.shortDescription}
+                w='100%'
+                onChangeText={handleChangeShortDescription}
+                placeholder='Value Controlled Input'
+              />{' '}
+            </FormControl>
+            <FormControl>
+              <FormControl.Label>longDescription</FormControl.Label>
+              <Input
+                value={value.longDescription}
+                w='100%'
+                onChangeText={handleChangeLongDescription}
+                placeholder='Value Controlled Input'
+              />{' '}
             </FormControl>
           </Modal.Body>
           <Modal.Footer>
@@ -65,7 +95,7 @@ const Example = ({ labelOne, labelTwo, buttonName }) => {
               <Button
                 onPress={() => {
                   setOpen(false)
-                  postExpensesFromApiAsync(value1)
+                  postExpensesFromApiAsync(value)
                 }}
               >
                 Save
