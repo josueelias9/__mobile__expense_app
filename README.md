@@ -13,7 +13,7 @@ sudo chmod 666 /var/run/docker.sock
 docker compose up
 ```
 - go to `http://localhost:8082/`
-- set credentials (if it doensnt work, insert any other password, such as `mysql_native_password` and then try again with the proposed credentials).
+- set credentials (if it doensnt work, insert any other password, such as `mysql_native_password` and then try again with the proposed credentials). The other thing you can do is just wait. It seems that it takes time for the database to start.
 ```
 servidor: db
 user: root
@@ -26,6 +26,11 @@ cd ./__mobile__expense_app/express-example/express-main-example
 npm run setup-example-db
 ```
 ### configure backend
+- install libraries
+```bash
+cd ./__mobile__expense_app/express-example/express-main-example
+npm install
+```
 - run backend
 ```bash
 cd ./__mobile__expense_app/express-example/express-main-example
@@ -33,6 +38,11 @@ npm run start
 ```
 - try this endpoint for testing (GET) `localhost:8080/api/expenses`
 ### configure frontend
+- install libraries
+```bash
+cd ./frontend/expensesApp
+npm install
+```
 - run frontend
 ```bash
 cd ./frontend/expensesApp
