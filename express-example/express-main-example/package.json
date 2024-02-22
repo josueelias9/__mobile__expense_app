@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "nodemon index.js",
-		"setup-example-db": "node sqlite-example-database/setup.js"
+		"setup-example-db": "node sqlite-example-database/setup.js",
+		"format": "npx prettier . --write"
 	},
 	"engines": {
 		"node": ">=10"
