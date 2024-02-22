@@ -6,7 +6,8 @@ const routes = {
 	users: require('./routes/users'),
 	instruments: require('./routes/instruments'),
 	orchestras: require('./routes/orchestras'),
-	expenses: require('./routes/expenses')
+	expenses: require('./routes/expenses'),
+	incomes: require('./routes/incomes'),
 	// Add more routes here...
 	// items: require('./routes/items'),
 }

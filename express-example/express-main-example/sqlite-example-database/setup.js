@@ -30,6 +30,21 @@ async function reset() {
 
 	await sequelize.models.client.bulkCreate(clientData)
 
+	// income table
+	let incomeData = []
+
+	for (let i = 0; i <= 10; i++) {
+		incomeData.push({
+			amount: faker.finance.amount(),
+			source:faker.person.fullName(),
+			destiny: pickRandom(["debit card","credit card","cash","international account"]),
+			description: faker.lorem.sentence(),
+			date: faker.date.recent()
+		})
+	}
+
+	await sequelize.models.income.bulkCreate(incomeData)
+	
 	// expense table
 	const expenseTypes = await sequelize.models.expenseType.findAll()
 
