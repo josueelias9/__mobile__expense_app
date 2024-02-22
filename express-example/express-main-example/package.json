@@ -4,7 +4,7 @@
 	"description": "This is an example of how to setup Sequelize and Express together in a project for NodeJS 10 and above.",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js",
+		"start": "nodemon index.js",
 		"setup-example-db": "node sqlite-example-database/setup.js"
 	},
 	"engines": {
@@ -21,6 +21,7 @@
 		"sqlite3": "^5.0.0"
 	},
 	"devDependencies": {
+		"nodemon": "^3.0.3",
 		"prettier": "3.1.1"
 	}
 }
