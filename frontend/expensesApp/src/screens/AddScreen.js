@@ -10,15 +10,15 @@ const my = 5
 const NewScreen = () => (
   <View>
     <Box mx={mx} my={my}>
-      <BaseModal buttonName={'Add expense'} labelOne={'Item name'} labelTwo={'Price'} />
+      <BaseModal />
     </Box>
-    <Box mx={mx} my={my}>
+    {/* <Box mx={mx} my={my}>
       <BaseModal
         buttonName={'Add income'}
         labelOne={'Short description'}
         labelTwo={'Long description'}
       />
-    </Box>
+    </Box> */}
   </View>
 )
 

@@ -2,7 +2,7 @@
 
 let endpoint = 'http://localhost:3000/expenses'
 // let endpoint = "http://localhost:8080/api/expenses"
-const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
+const postExpensesFromApiAsync = async value => {
   try {
     const response = await fetch(endpoint, {
       method: 'POST',
@@ -10,10 +10,7 @@ const postExpensesFromApiAsync = async ({ amount, shortDescription }) => {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        amount: amount,
-        shortDescription: shortDescription
-      })
+      body: JSON.stringify(value)
     })
   } catch (error) {
     console.error(error)
