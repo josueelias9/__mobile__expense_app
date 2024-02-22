@@ -11,7 +11,7 @@ const App = () => {
 
   const getMovies = async () => {
     try {
-      setData(await getExpensesFromApiAsync())
+      setData(await getExpensesFromApiAsync('expenses'))
     } catch (error) {
       console.error(error)
     } finally {

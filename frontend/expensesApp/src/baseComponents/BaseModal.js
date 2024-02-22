@@ -1,36 +1,15 @@
 // https://docs.nativebase.io/input#h3-controlled-input
 //@ts-nocheck
 import React from 'react'
-import { Button, Modal, Stack, FormControl, Input, Center, NativeBaseProvider } from 'native-base'
+import { Button, Modal, Stack, FormControl, Input } from 'native-base'
 import { useState } from 'react'
-import { postExpensesFromApiAsync } from '../api/tryFetch'
+import { postFromApiAsync } from '../api/tryFetch'
+import { camelCaseToWords } from '../utils/general'
 
-const Example = () => {
+const Example = ({ fields, startValues, endpoint }) => {
   const [placement, setPlacement] = useState(undefined)
   const [open, setOpen] = useState(false)
-  const [value, setValue] = React.useState({
-    amount: '',
-    shortDescription: '',
-    expenseTypeId: ''
-  })
-
-  const handleChangeAmount = text =>
-    setValue({
-      ...value,
-      amount: text
-    })
-
-  const handleChangeShortDescription = text =>
-    setValue({
-      ...value,
-      shortDescription: text
-    })
-
-  const handleChangeExpenseTypeId = text =>
-    setValue({
-      ...value,
-      expenseTypeId: text
-    })
+  const [value, setValue] = React.useState(startValues)
 
   const openModal = placement => {
     setOpen(true)
@@ -46,40 +25,26 @@ const Example = () => {
         }}
         space={2}
       >
-        <Button onPress={() => openModal('bottom')}>Bottom</Button>
+        <Button onPress={() => openModal('bottom')}>{endpoint}</Button>
       </Stack>
       <Modal isOpen={open} onClose={() => setOpen(false)} safeAreaTop={true}>
         <Modal.Content maxWidth='350' {...styles[placement]}>
           <Modal.CloseButton />
-          <Modal.Header>Contact Us</Modal.Header>
+          <Modal.Header>Add {endpoint}</Modal.Header>
           <Modal.Body>
-            <FormControl>
-              <FormControl.Label>amount</FormControl.Label>
-              <Input
-                value={value.amount}
-                w='100%'
-                onChangeText={handleChangeAmount}
-                placeholder='Value Controlled Input'
-              />
-            </FormControl>
-            <FormControl mt='3'>
-              <FormControl.Label>shortDescription</FormControl.Label>
-              <Input
-                value={value.shortDescription}
-                w='100%'
-                onChangeText={handleChangeShortDescription}
-                placeholder='Value Controlled Input'
-              />
-            </FormControl>
-            <FormControl mt='3'>
-              <FormControl.Label>expenseTypeId</FormControl.Label>
-              <Input
-                value={value.expenseTypeId}
-                w='100%'
-                onChangeText={handleChangeExpenseTypeId}
-                placeholder='Value Controlled Input'
-              />
-            </FormControl>
+            {fields.map((item, index) => {
+              return (
+                <FormControl key={index}>
+                  <FormControl.Label>{camelCaseToWords(item.name)}</FormControl.Label>
+                  <Input
+                    value={value[item.name]}
+                    w='100%'
+                    onChangeText={x => item.handler(x, setValue, value)}
+                    placeholder='Value Controlled Input'
+                  />
+                </FormControl>
+              )
+            })}
           </Modal.Body>
           <Modal.Footer>
             <Button.Group space={2}>
@@ -95,7 +60,7 @@ const Example = () => {
               <Button
                 onPress={() => {
                   setOpen(false)
-                  postExpensesFromApiAsync(value)
+                  postFromApiAsync(value, endpoint)
                 }}
               >
                 Save
